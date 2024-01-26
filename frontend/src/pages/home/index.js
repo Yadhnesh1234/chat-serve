@@ -1,26 +1,11 @@
-import { useSelector,useDispatch } from "react-redux"
-import {login} from '../../utility/action/userAction'
-import { useEffect } from "react";
+import { Outlet } from "react-router-dom"
 const Home = ()=>{
-    
-    const user = useSelector((state) => state.user);
-    const dispatch=useDispatch()
-
-    useEffect(()=>{
-
-      console.log(user)
-
-    },[user])
-
-return(
-    <>
-    
-    <h1>Hello I am Home </h1>
-    <button onClick={()=>{dispatch(login("DummyToken123","Yadhnesh"))}}>Login</button>
-
-    </>
-)
-
+    return(
+        <>
+        <Outlet/>
+        <h1>Home</h1>
+        </>
+    )
 }
 
 export default Home
