@@ -21,8 +21,8 @@ const Landing = ()=>{
          <div className="flex items-center justify-around my-24 px-4">
             <div className="mt-16 flex flex-col items-start">
                 <h1 style={{width:"50rem"}} className="text-7xl text-primary font-semibold">Chat-Serve: Elevate Your Dining, Effortless Service Await!</h1>
-                <p style={{width:"35rem"}} className="mt-4 text-2xl">Revolutionize Dining Experience With Our ChatBot-Powered Wireless Service-Seamless, Smart, and Swift!</p>
-                <Link to="/login" className="mt-12"><span className="text-xl cursor-pointer bg-orange-500 ring-2 ring-orange-600 rounded-lg px-8 py-4 hover:bg-orange-400">SignUp</span></Link>
+                <p style={{width:"35rem"}} className="mt-4 text-2xl text-gray-500">Revolutionize Dining Experience With Our ChatBot-Powered Wireless Service-Seamless, Smart, and Swift!</p>
+                <Link to="/signup" className="mt-12"><span className="text-xl cursor-pointer bg-orange-500 ring-2 ring-orange-600 rounded-lg px-8 py-4 hover:bg-orange-400">SignUp</span></Link>
             </div>
             <div>
             <img src={HERO_IMG} alt=""/>

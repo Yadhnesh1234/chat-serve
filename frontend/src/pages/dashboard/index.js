@@ -1,7 +1,8 @@
+import Cards from '../../components/cards'
 const Dashboard = ()=>{
     return(
         <>
-        <h1>Hello I am Dashboard</h1>
+     <Cards/>
         </>
     )
 }
