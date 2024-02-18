@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom"
-import Sidebar from "../../components/sidebar"
-import Navbar from "../../components/navbar"
+import Sidebar from "../../../components/sidebar"
+import Navbar from "../../../components/navbar"
 const Home = () => {
     return (
         <>
-            <div style={{ backgroundColor: "#F1F1F1" }} className="flex h-screen">
+            <div style={{ backgroundColor: "#F1F1F1" }} className="flex h-full">
                 <div className="w-2/12">
                    <Sidebar/>
                 </div>
