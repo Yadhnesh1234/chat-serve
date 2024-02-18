@@ -3,14 +3,12 @@ import BottomNav from "../../../components/bottomnav"
 const CookHome = () => {
     return (
         <>
-            <div style={{ backgroundColor: "#F1F1F1" }} className="flex h-full">
-                <div className="w-2/12">
+            <div style={{ backgroundColor: "#F1F1F1" }} className="flex h-screen flex-col">
+                <div>
+                   <Outlet/>
                    <BottomNav/>
                 </div>
-                <div  className="w-10/12 mr-12">
-                    <div>
-                        <Outlet/>
-                    </div>
+                <div>       
                 </div>
             </div>
         </>
