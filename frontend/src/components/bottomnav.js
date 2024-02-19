@@ -1,7 +1,6 @@
 const BottomNav=()=>{
     return(
         <>
-<div class="w-full h-screen">
 	<section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-10 bg-white shadow">
 		<div id="tabs" class="flex justify-between">
 			<a href="/" class="w-full focus:text-primary hover:text-primary justify-center inline-block text-center pt-2 pb-1">
@@ -43,7 +42,6 @@ const BottomNav=()=>{
 			</a>
 		</div>
 	</section>
-</div>
 </>
     )
 }

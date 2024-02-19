@@ -10,6 +10,7 @@ import OtpVerify from './pages/opt';
 import Settings from './pages/manager/settings';
 import Menu from './pages/manager/menu';
 import CookHome from './pages/cook/home'
+import CookDashboard from './pages/cook/dashboard';
 const App=()=>{
    return(
     <>
@@ -29,6 +30,7 @@ const App=()=>{
 
        {/* Cooks Routes */}
        <Route exact path="/cook-home" element={<CookHome/>}>
+          <Route index element={<CookDashboard/>}/>
        </Route>
 
 
