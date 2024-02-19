@@ -11,6 +11,8 @@ import Settings from './pages/manager/settings';
 import Menu from './pages/manager/menu';
 import CookHome from './pages/cook/home'
 import CookDashboard from './pages/cook/dashboard';
+import Profile from './pages/cook/Profile';
+import Explore  from './pages/cook/explore'
 const App=()=>{
    return(
     <>
@@ -31,6 +33,8 @@ const App=()=>{
        {/* Cooks Routes */}
        <Route exact path="/cook-home" element={<CookHome/>}>
           <Route index element={<CookDashboard/>}/>
+          <Route path="profile" element={<Profile/>}/>
+          <Route path="explore" element={<Explore/>}/>
        </Route>
 
 
