@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 const BottomNav=()=>{
     return(
         <>
-	<section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-10 bg-white shadow">
+	<section id="bottom-navigation" class="block sticky inset-x-0 bottom-0 z-10 bg-white shadow">
 		<div id="tabs" class="flex justify-between">
 			<Link to="" class="w-full focus:text-primary hover:text-primary justify-center inline-block text-center pt-2 pb-1">
 				<svg width="25" height="25" viewBox="0 0 42 42" class="inline-block mb-1">
