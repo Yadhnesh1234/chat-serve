@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
 import BottomNav from "../../../components/bottomnav"
-const CookHome = () => {
+const UserHome=()=>{
     return (
         <>
             <div>
@@ -11,4 +11,4 @@ const CookHome = () => {
     )
 }
 
-export default CookHome
+export default UserHome

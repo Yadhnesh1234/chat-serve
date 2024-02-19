@@ -25,7 +25,7 @@ const Landing = ()=>{
                 <Link to="/signup" className="mt-12"><span className="text-xl cursor-pointer bg-orange-500 ring-2 ring-orange-600 rounded-lg px-8 py-4 hover:bg-orange-400">SignUp</span></Link>
             </div>
             <div>
-            <img src={HERO_IMG} alt=""/>
+            <img src={HERO_IMG} alt="" />
             </div>
          </div>
     </header>

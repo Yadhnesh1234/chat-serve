@@ -13,6 +13,9 @@ import CookHome from './pages/cook/home'
 import CookDashboard from './pages/cook/dashboard';
 import Profile from './pages/cook/Profile';
 import Explore  from './pages/cook/explore'
+import UserHome from './pages/user/home';
+import UserDashboard from './pages/user/dashboard';
+import Cart from './pages/user/cart';
 const App=()=>{
    return(
     <>
@@ -37,6 +40,11 @@ const App=()=>{
           <Route path="explore" element={<Explore/>}/>
        </Route>
 
+       {/* User Routes */}
+       <Route exact path="/user-home" element={<UserHome/>}>
+          <Route index element={<UserDashboard/>}/>
+          <Route path="cart" element={<Cart/>}/>
+       </Route>
 
        <Route path="*" element={<NoMatch/>}/>
 
