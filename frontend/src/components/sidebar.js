@@ -3,6 +3,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import HomeIcon from '@mui/icons-material/Home';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { Link } from 'react-router-dom';
 const Sidebar = () => {
   return (
@@ -38,6 +39,13 @@ const Sidebar = () => {
               <Link to="settings" class="hs-accordion-toggle hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                 <SettingsOutlinedIcon/>
                 Settings
+              </Link>
+            </li>
+
+            <li class="hs-accordion" id="account-accordion">
+              <Link to="transactions" class="hs-accordion-toggle hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                <AccessTimeIcon/>
+                Transactions
               </Link>
             </li>
 
