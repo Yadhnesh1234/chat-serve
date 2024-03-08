@@ -6,3 +6,6 @@ https://medium.com/@amitchotia9/how-do-restaurant-would-manage-waiter-less-cashi
 
 ## Database Schema
 https://drawsql.app/teams/webriders/diagrams/restaurant-database
+
+## Database Hosted
+https://console.aiven.io/account/a49b3c413a6a/project/programlangu-7bc5/services/mysql-33b5b075/logs
