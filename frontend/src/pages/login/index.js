@@ -1,26 +1,20 @@
-import { useSelector } from "react-redux"
-// import {login} from '../../utility/action/userAction'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
-  const user = useSelector((state) => state.user);
-  // const dispatch=useDispatch()
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
+    role: "", // Initialize role as empty string
     email: "",
     password: ""
   })
 
   const [error, setError] = useState({
+    role_error: "", // Add role_error state
     email_error: "",
     password_error: ""
   })
-
-  useEffect(() => {
-    console.log(user)
-  }, [user])
 
   const handleChange = (e) => {
     setFormData((prev) => {
@@ -32,7 +26,6 @@ const Login = () => {
   }
 
   const validateData = (email) => {
-
     const email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     var flag = false
 
@@ -48,17 +41,58 @@ const Login = () => {
     return flag
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setError({
+      role_error: "", // Clear role_error
       email_error: "",
       password_error: "",
     })
-    if (!validateData(formData.email)) {
-      navigate("/home")
+
+    // Validate role
+    if (formData.role === "") {
+      setError((prev) => {
+        return {
+          ...prev,
+          role_error: "Please select a role"
+        }
+      });
+      return;
     }
 
+    // Validate email
+    if (validateData(formData.email)) {
+      return;
+    }
+
+    // Send POST request to login API
+    try {
+      console.log(formData)
+      const response = await fetch('http://localhost:5000/api/v1/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+
+      // Assuming successful login redirects based on role
+      const data = await response.json();
+      if (formData.role === "Cook") {
+        navigate("/cook-home");
+      } else {
+        navigate("/home");
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      // Handle login failure
+    }
   }
+
 
   return (
     <>
@@ -76,8 +110,8 @@ const Login = () => {
               <div class="mt-2 flex flex-col">
                 <select id="role" name="role" onChange={handleChange} value={formData.role} required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm px-4 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  focus:ring-orange-600 sm:text-sm sm:leading-6">
                   <option value="">Select Role</option>
-                  <option value="manager">Manager</option>
-                  <option value="cook">Cook</option>
+                  <option value="Manager">Manager</option>
+                  <option value="Cook">Cook</option>
                 </select>
                 <p className="text-red-600">{error.role_error}</p>
               </div>

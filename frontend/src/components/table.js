@@ -1,4 +1,4 @@
-const Table=({color})=>{
+const Table=({color,tableId})=>{
 
 
         if(color===1){

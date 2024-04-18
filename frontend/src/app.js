@@ -48,7 +48,7 @@ const App=()=>{
        </Route>
 
        {/* User Routes */}
-       <Route exact path="/user-home" element={<UserHome/>}>
+       <Route exact path="/user-home/:tableId" element={<UserHome/>}>
           <Route index element={<UserDashboard/>}/>
           <Route path="cart" element={<Cart/>}/>
        </Route>

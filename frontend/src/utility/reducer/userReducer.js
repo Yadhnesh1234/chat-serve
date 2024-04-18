@@ -1,20 +1,17 @@
 
 const initialState={
-    token:"",
-    name:"",
+    tableId:"",
 }
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
       case 'LOGIN':
         return { ...state, 
-            token:action.token,
-            name:action.name,
+            tableId:action.tableId,
         };
       case 'LOGOUT':
         return {
           ...state,
-          token:"",
-          name:""
+          tableId:""
         };
       default:
         return state;

@@ -1,8 +1,7 @@
-export const login = (usrtoken,usrname) => {
+export const login = () => {
     return {
       type: 'LOGIN',
-      token:usrtoken,
-      name:usrname
+      tableId:1
     };
   };
   
