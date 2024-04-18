@@ -1,10 +1,22 @@
 const express = require('express');
-const connect_db = require('./src/db')
+const cors = require('cors');
+const {connect_db} = require('./src/db')
+const manager=require('./src/routes/manager/auth')
+const login=require('./src/routes/login')
+const cook = require('./src/routes/cook/order')
 require('dotenv').config();
 
 const app = express();
+app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000'
+}));
+app.use(express.json())
+app.use("/api/v1",manager)
+app.use("/api/v1",login)
+app.use("/api/v1",cook)
 
-//Create Database Connectivity with Database
+
 connect_db()
 
 const PORT = process.env.PORT || 3000;
