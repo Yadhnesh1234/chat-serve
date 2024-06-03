@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom"
 import HERO_IMG from "../../assets/hero_img.png"
+import CHAT_BOT from "../../assets/chat-bot.gif"
+import { useState } from "react"
 const Landing = ()=>{
+    const [frame,setFrame]=useState(false)
+    const openFrame=()=>{
+         if(!frame)
+            setFrame(true);
+         else 
+            setFrame(false);
+    }
     return(
         <>
     <header>
@@ -27,6 +36,15 @@ const Landing = ()=>{
             <div>
             <img src={HERO_IMG} alt="" />
             </div>
+         </div>
+         <div style={{display:"flex",justifyContent:"flex-end",marginRight:"30px"}}>
+            {
+              frame?<div style={{position:"absolute",top:"30%",right:"5%"}}>
+              <iframe title="Chat-Serve" width="350" height="500" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/b493af1b-334a-4416-b628-adc497f7eb2a"></iframe>
+              </div>:""
+            }
+            
+            <img src={CHAT_BOT} alt="" style={{width:"150px",height:"150px",cursor:"pointer"}} onClick={openFrame}/>
          </div>
     </header>
         </>

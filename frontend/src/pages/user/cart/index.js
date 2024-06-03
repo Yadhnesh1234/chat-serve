@@ -100,14 +100,14 @@ const Cart = () => {
                                             <p className="text-lg leading-6 font-semibold text-gray-800">
                                                 Pay Bill
                                                 <br />
-                                                <span className="font-normal" onClick={() => toPDF()}>Pay</span>
+                                                <span className="font-normal" >Pay</span>
                                             </p>
                                         </div>
                                     </div>
                                     <p className="text-lg font-semibold leading-6 text-gray-800">$8.00</p>
                                 </div>
                                 <div className="w-full flex justify-center items-center">
-                                    <button className="hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800 py-5 w-96 md:w-full bg-orange-800 text-base font-medium leading-4 text-white">Pay Bill</button>
+                                    <button onClick={() => toPDF()} className="hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800 py-5 w-96 md:w-full bg-orange-800 text-base font-medium leading-4 text-white">Pay Bill</button>
                                 </div>
                             </div>
                         </div>
